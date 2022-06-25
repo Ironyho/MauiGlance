@@ -8,25 +8,33 @@
     x:DataType="viewModels:ShellViewModel"
     Shell.FlyoutBehavior="Locked">
 
-    <FlyoutItem Title="{Binding Docs.Title}"  FlyoutDisplayOptions="AsSingleItem" SemanticProperties.Hint="{Binding Docs.Hint}">
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <HorizontalStackLayout>
+                <Image Source="{Binding Icon}" WidthRequest="16" HeightRequest="16"/>
+                <Label Text="{Binding Title}" />
+            </HorizontalStackLayout>
+        </DataTemplate>
+    </Shell.ItemTemplate>
+    
+    <FlyoutItem Title="{Binding Docs.Title}" Icon="{Binding Docs.Icon}" FlyoutDisplayOptions="AsSingleItem">
         <Tab>
             <ShellContent ContentTemplate="{DataTemplate local:MainPage}"/>
         </Tab>
     </FlyoutItem>
-    <FlyoutItem Title="{Binding Demos.Title}" SemanticProperties.Hint="{Binding Demos.Hint}">
+    <FlyoutItem Title="{Binding Demos.Title}" Icon="{Binding Demos.Icon}">
         <Tab>
             <ShellContent ContentTemplate="{DataTemplate local:MainPage}" Route="demos" />
         </Tab>
     </FlyoutItem>
-    <FlyoutItem Title="{Binding Samples.Title}" SemanticProperties.Hint="{Binding Samples.Hint}">
+    <FlyoutItem Title="{Binding Samples.Title}" Icon="{Binding Samples.Icon}">
         <Tab>
             <ShellContent ContentTemplate="{DataTemplate local:MainPage}" Route="samples" />
         </Tab>
     </FlyoutItem>
-    <FlyoutItem Title="{Binding Settings.Title}" SemanticProperties.Hint="{Binding Settings.Hint}">
+    <FlyoutItem Title="{Binding Settings.Title}" Icon="{Binding Settings.Icon}">
         <Tab>
-            <ShellContent ContentTemplate="{DataTemplate local:MainPage}" Route="settings"/>
+            <ShellContent ContentTemplate="{DataTemplate local:MainPage}" Route="settings" />
         </Tab>
     </FlyoutItem>
-    
 </Shell>

@@ -1,10 +1,12 @@
-﻿namespace MauiGlance.Models
+﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
+
+namespace MauiGlance.Models;
+
+public partial class AppModule: ObservableObject
 {
-    public struct AppModule
-    {
-        public string Title { get; set; }
-        public string Hint { get; set; }
-        public string LightIconUri { get; set; }
-        public string DrakIconUri { get; set; }
-    }
+    [ObservableProperty]
+    string title;
+
+    [ObservableProperty]
+    string icon;
 }
