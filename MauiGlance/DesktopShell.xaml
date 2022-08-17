@@ -7,12 +7,18 @@
     xmlns:viewModels="clr-namespace:MauiGlance.ViewModels"
     x:DataType="viewModels:ShellViewModel"
     Shell.FlyoutBehavior="Locked">
+    
+    <!--Shell flyout background color does not change when behavior is set to Locked-->
+    <!--https://github.com/dotnet/maui/issues/6552-->
+    
+    <!--Fix Flyout Background so it gets set in Locked behavior mode-->
+    <!--https://github.com/dotnet/maui/pull/6901-->
 
     <Shell.ItemTemplate>
         <DataTemplate>
-            <HorizontalStackLayout>
-                <Image Source="{Binding Icon}" WidthRequest="16" HeightRequest="16"/>
-                <Label Text="{Binding Title}" />
+            <HorizontalStackLayout HeightRequest="48" Padding="16,0" Spacing="12">
+                <Image Source="{Binding Icon}" WidthRequest="16" HeightRequest="16" VerticalOptions="Center"/>
+                <Label Text="{Binding Title}" VerticalOptions="Center" VerticalTextAlignment="Center" TextColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}"/>
             </HorizontalStackLayout>
         </DataTemplate>
     </Shell.ItemTemplate>

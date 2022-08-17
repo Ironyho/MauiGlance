@@ -46,6 +46,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\shell_demos.svg" />
+	  <None Remove="Resources\Images\shell_demos_dark.svg" />
+	  <None Remove="Resources\Images\shell_docs.svg" />
+	  <None Remove="Resources\Images\shell_docs_dark.svg" />
+	  <None Remove="Resources\Images\shell_samples.svg" />
+	  <None Remove="Resources\Images\shell_samples_dark.svg" />
 	  <None Remove="Resources\Images\shell_settings.svg" />
 	  <None Remove="Resources\Images\shell_settings_dark.svg" />
 	</ItemGroup>
